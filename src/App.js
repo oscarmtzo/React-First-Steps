@@ -26,6 +26,9 @@ function App() {
     },
   ];
 
+  /**
+   * @param {arrOfExpenses} is the property that will contain all data of expenses variable, it can also be a JSON
+   */
   return (
     <div>
       <h2>Let's get started!</h2>

@@ -1,18 +1,23 @@
 //importation of css styles within the same file directory
 import "./ExpenseItem.css";
 /**
- * expenseDate is a component for displaying date within an couple of div´s tags, to reduce the amount of logic
+ * {expenseDate} is a component for displaying date within an couple of div´s tags, to reduce the amount of logic
  */
 import ExpenseDate from './ExpenseDate'
 
 /**
+ * {Card} 
+ */
+import Card from "./Card";
+
+/**
  * 
- * @param props is the data passed from the expenses variable from ./../App.js 
+ * @param {props} is the data passed from the expenses variable from ./../App.js 
  */
 function ExpenseItem(props) {
     
     return (
-        <div className="expense-item">
+        <Card className="expense-item">
 
             <ExpenseDate date={props.date}/>
             
@@ -20,7 +25,7 @@ function ExpenseItem(props) {
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">$ {props.amount}</div>
             </div>
-        </div>
+        </Card>
     );
 }
 

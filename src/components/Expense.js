@@ -4,6 +4,18 @@ import ExpenseItem from "./ExpenseItem";
 //Styles for the card that stores expense items
 import './Expenses.css';
 
+/**
+ * {Card} is a special component to wrap around all my Expenses Items, it has special styling defined on its JS
+ * It will be used on the return value of our React component "Expenses" as a wrapper
+ */
+import Card from "./Card";
+
+
+/**
+ * 
+ * @param {object} props  is an object with an attribute named "arrOfExpense" which contains an array of data 
+ * @returns a React component full of child components
+ */
 function Expenses(props) {
     // console.log(props.arrOfExpenses[0])
     /**
@@ -12,7 +24,7 @@ function Expenses(props) {
     let expenses = props.arrOfExpenses; //=> [{}, {}, ...]
 
     /**
-     * @array of Item Expenses components, it adds every component to the queue, from first to last one 
+     * @array of Item Expenses components, it adds every component to the queue, from first element to the last one 
      */
     let arr = []
     expenses.forEach( data => {
@@ -24,8 +36,12 @@ function Expenses(props) {
             />
         )
     });
+
+    /**
+     * has only one @root div in order to render same level components, always using a father-like component 
+     */
     return (
-        <div className="expenses">
+        <Card className="expenses">
 
             
             {/* <ExpenseItem 
@@ -34,7 +50,7 @@ function Expenses(props) {
                 date= {props.arrOfExpenses[0].date}
             />  */}
             {arr}
-        </div>
+        </Card>
     )
     
 }
